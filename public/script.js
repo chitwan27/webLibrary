@@ -30,12 +30,12 @@ async function fetchData(num,div) {
     }
 }
 
-function supplyLinks(array,num,div) {
+function supplyLinks(arry,num,ctr) {
     if (num>0) {
-        for(let i = ((num-1)*10); i < (num*10) && i < array.length; i++) {
+        for(let i = ((num-1)*10); i < (num*10) && i < arry.length; i++) {
             const linkElement = document.createElement('iframe');
-            div.appendChild(linkElement);
-            linkElement.src = array[i];
+            ctr.appendChild(linkElement);
+            linkElement.src = arry[i];
             linkElement.height = 300;
             linkElement.width = 600;
         }
