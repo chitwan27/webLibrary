@@ -21,7 +21,7 @@ async function fetchData(num,div) {
         }
         // Parse the response as JSON
         const data = await response.json();
-        // Fill the links into the div
+        // Fill the links into the div element
         supplyLinks(data,num,div);
     } 
     catch (error) {
@@ -33,11 +33,13 @@ async function fetchData(num,div) {
 function supplyLinks(arry,num,ctr) {
     if (num>0) {
         for(let i = ((num-1)*10); i < (num*10) && i < arry.length; i++) {
+            const link = "https://www.youtube.com/embed/" + arry[i];
             const linkElement = document.createElement('iframe');
+            linkElement.setAttribute("allowfullscreen","");
             ctr.appendChild(linkElement);
-            linkElement.src = arry[i];
             linkElement.height = 300;
             linkElement.width = 600;
+            linkElement.src = link;
         }
     }
 }
