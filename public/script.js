@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     nInput.placeholder = "1-56";
 
     nInput.addEventListener("change", () => {
-        const n = document.getElementById("nInput").value;
-        const dv = document.querySelector("div");
+        const num = document.getElementById("nInput").value;
+        const div = document.querySelector("div");
         dv.innerHTML = "";
-        fetchData(n,dv);
+        fetchData(num,div);
     });
     
 });
@@ -30,13 +30,13 @@ async function fetchData(num,div) {
     }
 }
 
-function supplyLinks(arry,num,ctr) {
+function supplyLinks(list,num,div) {
     if (num>0) {
-        for(let i = ((num-1)*10); i < (num*10) && i < arry.length; i++) {
-            const link = "https://www.youtube.com/embed/" + arry[i];
+        for(let i = ((num-1)*10); i < (num*10) && i < list.length; i++) {
+            const link = "https://www.youtube.com/embed/" + list[i];
             const linkElement = document.createElement('iframe');
             linkElement.setAttribute("allowfullscreen","");
-            ctr.appendChild(linkElement);
+            div.appendChild(linkElement);
             linkElement.height = 300;
             linkElement.width = 600;
             linkElement.src = link;
