@@ -1,17 +1,14 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const nInput = document.getElementById("nInput");
     const frame = document.querySelector("div");
-    pageReferesher(nInput, frame);
-});
-
-async function pageReferesher(npt, cntnr) {
     const arr = await fetchData();
-    npt.addEventListener("change", () => {
-        cntnr.innerHTML = "";
-        const num = npt.value;
-        supplyLinks(arr,num,cntnr);
+    nInput.placeholder = "1 - " + Math.floor((arr.length)/10);
+    nInput.addEventListener("change", () => {
+        frame.innerHTML = "";
+        const num = nInput.value;
+        supplyLinks(arr,num,frame);
     });
-}
+});
 
 function supplyLinks(list,number,container) {
     if (number>0) {
