@@ -10,6 +10,7 @@ h1,h2 {
     color: #3e0000; 
     border-radius: 5px;
     background-color: #ce7d7d; 
+    border: 3px solid #0F88FB; 
 }
 
 div {
