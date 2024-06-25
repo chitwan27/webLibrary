@@ -1,7 +1,6 @@
 const express = require('express');
 const fs = require('fs').promises;
 const path = require('path');
-
 const app = express();
 const port = 3000;
 
@@ -9,11 +8,6 @@ const pocketPath = 'db/pocket/articles.json';
 const youtubePath = 'db/youtube/videos.json';
 const redditPath = 'db/reddit/posts.json';
 const miscPath = 'db/misc/misc.json';
-
-makeApi('/api/youtube', pocketPath);
-makeApi('/api/pocket', youtubePath);
-makeApi('/api/reddit', redditPath);
-makeApi('/api/misc', miscPath);
 
 fs.readFile('db/pocket/data.json','utf8')
 .then((data) => {
@@ -27,6 +21,11 @@ fs.readFile('db/pocket/data.json','utf8')
 });
 
 app.use(express.static(path.join(__dirname, 'pages')));
+
+makeApi('/api/youtube', youtubePath);
+makeApi('/api/pocket', pocketPath);
+makeApi('/api/reddit', redditPath);
+makeApi('/api/misc', miscPath);
 
 app.listen(port, () => {
     console.log(`Running On: http://localhost:${port} \n`);
@@ -89,11 +88,11 @@ function getPocket(consumerKey,accessToken){
                 pocketObj[item.resolved_url] = pair; 
             };
         }
+        clearPocket(itemsId,consumerKey,accessToken);
         updateJson(youtubeObj,youtubePath);
         updateJson(pocketObj,pocketPath);
         updateJson(redditObj,redditPath);
         updateJson(miscObj,miscPath);
-        clearPocket(itemsId);
     })
     .catch(error => {
         console.error('Fetch error:', error);
@@ -112,11 +111,14 @@ function updateJson(newObj,path) {
         .then((err) => {
             if (err) throw err;
             console.log("Written Successfully: " + path);
+        })
+        .catch(err => {
+            console.error(`Error Writing: ${err}`);
         });
     });
 }
 
-function clearPocket(items) {
+function clearPocket(items,consumerKey,accessToken) {
     const requestData = {
         consumer_key: consumerKey,
         access_token: accessToken,
