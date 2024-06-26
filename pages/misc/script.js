@@ -20,11 +20,10 @@ function supplyLinks(list,number,container) {
 
             const lnk = document.createElement('a');
             lnk.setAttribute("target","_blank");
-            lnk.textContent = " 🔗 ";
-            lnk.textContent += title;
+            lnk.textContent = title;
             lnk.href = link;
 
-            if(lnk.textContent.length < 5) lnk.textContent += link;
+            if(lnk.textContent.length < 3) lnk.textContent += link;
             const linkElement = document.createElement('div');
             linkElement.style.backgroundColor = "#FFF7F7";
             linkElement.style.borderColor = "#0F88FB";

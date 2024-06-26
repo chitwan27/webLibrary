@@ -1,6 +1,6 @@
 body{
     text-align: center;
-    background-color: #ffe0e0; 
+    background-color: #e0e2fa; 
     color: #333; 
 }
 
@@ -24,7 +24,7 @@ div{
     padding: 20px;
     border: 1px solid #F48FB1; 
     border-radius: 15px;
-    background-color: #e0e2fa; 
+    background-color: #ffe0e0; 
     margin: 20px;
 }
 
@@ -46,5 +46,5 @@ a{
 }
 
 a:hover{
-    text-decoration: underline dotted #ea5a8a;
+    text-decoration: underline dashed #0b28ba;
 }
