@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js & open-cli http://localhost:3000"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -12,7 +12,6 @@
   "dependencies": {
     "express": "^4.19.2",
     "fs": "^0.0.1-security",
-    "open-cli": "^8.0.0",
     "path": "^0.12.7"
   }
 }
