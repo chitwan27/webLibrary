@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs').promises;
 const path = require('path');
+
 const app = express();
 const port = 3000;
 
@@ -33,7 +34,7 @@ app.listen(port, () => {
 
 //---//
 
-async function makeApi(apiPath, filePath) {
+function makeApi(apiPath, filePath) {
     app.get(apiPath, (req, res) => {
         fs.readFile(path.join(__dirname, filePath), 'utf8')
         .then(data => {
@@ -70,7 +71,6 @@ function getPocket(consumerKey,accessToken){
         const redditObj = {};
         const miscObj = {};
         const itemsId = [];
-        const holderImg = "https://picsum.photos/300/200";
         for (const key in data.list) {
             itemsId.push(key);
             const item = data.list[key];
@@ -78,14 +78,13 @@ function getPocket(consumerKey,accessToken){
                 miscObj[item.resolved_url] = item.resolved_title;
             }
             else if (/watch\?v/i.test(item.given_url) || /youtube\.com\/shorts/i.test(item.given_url)) {
-                youtubeObj[item.given_url] = item.resolved_title;
+                youtubeObj[item.resolved_url] = item.resolved_title;
             }
             else if (/reddit\.com\/r\/[^/]+\/comments/i.test(item.given_url)) {
                 redditObj[item.given_url] = item.resolved_title;
             }
             else {
-                const pair = [item.resolved_title, item.image?.src || holderImg];
-                pocketObj[item.resolved_url] = pair; 
+                pocketObj[item.resolved_url] = item.resolved_title; 
             };
         }
         clearPocket(itemsId,consumerKey,accessToken);
@@ -95,26 +94,27 @@ function getPocket(consumerKey,accessToken){
         updateJson(miscObj,miscPath);
     })
     .catch(error => {
-        console.error('Fetch error:', error);
+        console.log('Fetch Error:', error);
     });
 }
 
 function updateJson(newObj,path) {
     fs.readFile(path, 'utf8')
-    .then((err,data) => {
-        if (err) throw err;
+    .then((data) => {
         const oldObj = JSON.parse(data);
         for (const key in newObj) {
             oldObj[key] = newObj[key];
         }
         fs.writeFile(path,JSON.stringify(oldObj))
-        .then((err) => {
-            if (err) throw err;
-            console.log("Written Successfully: " + path);
+        .then(() => {
+            console.log(`Written Successfully: ${path} \n`);
         })
         .catch(err => {
-            console.error(`Error Writing: ${err}`);
+            console.log(`Error Writing: ${err}`);
         });
+    })
+    .catch(err => {
+        console.log(`Read Error: ${err}`);
     });
 }
 

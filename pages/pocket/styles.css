@@ -38,21 +38,11 @@ div{
     color: darkslategrey;
 }
 
-embed{
-    background-color: #fafffa; 
-    border: 3px solid #2b2ba9; 
-    border-radius: 5px;
-    padding: 0px;
-    margin: 0px;
-}
-
 a{
     background-color: #fafffa;
-    font-family: monospace;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 2.5em;
-    margin: 0 0 10px;
+    font-size: 2rem;
 }
 
 a:hover{

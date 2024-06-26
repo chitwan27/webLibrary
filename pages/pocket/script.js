@@ -15,14 +15,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 function supplyLinks(list,number,container) {
     if (number>0) {
         for(let i = ((number-1)*10); i < (number*10) && i < list.length; i++) {
+            const title = list[i][1];
             const link = list[i][0];
-            const title = list[i][1][0];
-            const image = list[i][1][1];
-
-            const linkEmbed = document.createElement('embed');
-            linkEmbed.style.maxHeight = "125px";
-            linkEmbed.style.maxWidth = "250px";
-            linkEmbed.src = image;
 
             const lnk = document.createElement('a');
             lnk.setAttribute("target","_blank");
@@ -30,18 +24,15 @@ function supplyLinks(list,number,container) {
             lnk.textContent += title;
             lnk.href = link;
 
+            if(lnk.textContent.length < 5) lnk.textContent += link;
             const linkElement = document.createElement('div');
-            linkElement.style.justifyContent = "space-evenly";
             linkElement.style.backgroundColor = "#FFF7F7";
             linkElement.style.borderColor = "#0F88FB";
             linkElement.style.borderRadius = "10px";
-            linkElement.style.flexWrap = "nowrap";
-            linkElement.style.height = "300px";
-            linkElement.style.width = "600px";
+            linkElement.style.height = "250px";
+            linkElement.style.width = "500px";
 
-            linkElement.appendChild(linkEmbed);
             linkElement.appendChild(lnk);
-
             container.appendChild(linkElement);
         }
     }
