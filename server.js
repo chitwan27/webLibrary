@@ -87,11 +87,13 @@ function getPocket(consumerKey,accessToken){
                 pocketObj[item.resolved_url] = item.resolved_title; 
             };
         }
-        clearPocket(itemsId,consumerKey,accessToken);
-        updateJson(youtubeObj,youtubePath);
-        updateJson(pocketObj,pocketPath);
-        updateJson(redditObj,redditPath);
-        updateJson(miscObj,miscPath);
+        if(itemsId.length > 0) {
+            clearPocket(itemsId,consumerKey,accessToken);
+            updateJson(youtubeObj,youtubePath);
+            updateJson(pocketObj,pocketPath);
+            updateJson(redditObj,redditPath);
+            updateJson(miscObj,miscPath);
+        }
     })
     .catch(error => {
         console.log('Fetch Error:', error);

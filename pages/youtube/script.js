@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     nInput.addEventListener("change", () => {
         frame.innerHTML = "";
         const num = nInput.value;
-        supplyLinks(arr,num,frame);
+        supplyLinks(arr.sort(),num,frame);
     });
 });
 

@@ -39,12 +39,12 @@ div{
 }
 
 a{
-    background-color: #fafffa;
+    background-color: #fcf8fc;
     text-decoration: none;
     border-radius: 5px;
     font-size: 2rem;
 }
 
 a:hover{
-    text-decoration: underline dotted #F48FB1;
+    text-decoration: underline dotted #ea5a8a;
 }

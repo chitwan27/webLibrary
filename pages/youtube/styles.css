@@ -1,20 +1,19 @@
 body {
     text-align: center;
     background-color: #E0F7FA; 
-    color: #333; 
 }
 
 h1,h2 {
     margin: 20px;
     padding: 20px;
-    color: #3e0000; 
+    color: #133e00; 
     border-radius: 5px;
-    background-color: #ce7d7d; 
+    background-color: #f6acac; 
     border: 3px solid #0F88FB; 
 }
 
 div {
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: "Segoe UI";
     justify-content: center;
     align-content: center;
     align-items: center;
@@ -22,8 +21,8 @@ div {
     display: flex;
 
     padding: 10px;
-    border: 1px solid #F48FB1; 
     border-radius: 15px;
+    border: 1px solid #F48FB1; 
     background-color: #FFF3E0; 
     margin: 20px;
 }

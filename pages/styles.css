@@ -29,13 +29,13 @@ div{
 }
 
 a{
-    background-color: #ff0f0f; 
-    border: 5px solid #A01234; 
-    border-radius: 15px;
+    background-color: #ff2020be; 
+    border: 2px solid #0f000f; 
+    border-radius: 25px;
     font-size: 2.5rem;
     min-height: 75px;
     min-width: 300px;
-    color:#f6f6eb;
+    color: #f6f6eb;
     padding: 15px;
     margin: 15px;
 }
