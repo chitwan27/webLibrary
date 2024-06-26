@@ -32,8 +32,6 @@ app.listen(port, () => {
     console.log(`Running On: http://localhost:${port} \n`);
 });
 
-//---//
-
 function makeApi(apiPath, filePath) {
     app.get(apiPath, (req, res) => {
         fs.readFile(path.join(__dirname, filePath), 'utf8')
