@@ -10,27 +10,31 @@ const youtubePath = 'db/youtube/videos.json';
 const redditPath = 'db/reddit/posts.json';
 const miscPath = 'db/misc/misc.json';
 
-fs.readFile('db/pocket/data.json','utf8')
-.then((data) => {
-    const myData = JSON.parse(data);
-    const consumerKey = myData["Consumer Key"];
-    const accessToken = myData["access_token"];
-    getPocket(consumerKey,accessToken);
-})
-.catch((err) => {
-    console.log(`Error Occured: ${err}`)
-});
-
-app.use(express.static(path.join(__dirname, 'pages')));
-
 makeApi('/api/youtube', youtubePath);
 makeApi('/api/pocket', pocketPath);
 makeApi('/api/reddit', redditPath);
 makeApi('/api/misc', miscPath);
 
+app.use(express.static(path.join(__dirname, 'pages')));
+
 app.listen(port, () => {
     console.log(`Running On: http://localhost:${port} \n`);
 });
+
+app.get('/trigger-sync', (req, res) => {
+    fs.readFile('db/pocket/data.json','utf8')
+    .then((data) => {
+        const myData = JSON.parse(data);
+        const consumerKey = myData["Consumer Key"];
+        const accessToken = myData["access_token"];
+        getPocket(consumerKey,accessToken);
+    })
+    .catch((err) => {
+        console.log(`Error Occured: ${err}`)
+    });
+});
+
+//-=-//
 
 function makeApi(apiPath, filePath) {
     app.get(apiPath, (req, res) => {
