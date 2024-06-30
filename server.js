@@ -22,7 +22,7 @@ app.listen(port, () => {
 });
 
 app.get('/trigger-sync', (req, res) => {
-    fs.readFile('db/pocket/data.json','utf8')
+    fs.readFile(path.join(__dirname, 'db/pocket/data.json'),'utf8')
     .then((data) => {
         const myData = JSON.parse(data);
         const consumerKey = myData["Consumer Key"];
@@ -102,14 +102,14 @@ function getPocket(consumerKey,accessToken){
     });
 }
 
-function updateJson(newObj,path) {
-    fs.readFile(path, 'utf8')
+function updateJson(newObj,filePath) {
+    fs.readFile(path.join(__dirname, filePath), 'utf8')
     .then((data) => {
         const oldObj = JSON.parse(data);
         for (const key in newObj) {
             oldObj[key] = newObj[key];
         }
-        fs.writeFile(path,JSON.stringify(oldObj))
+        fs.writeFile(path.join(__dirname, filePath),JSON.stringify(oldObj))
         .then(() => {
             console.log(`Written Successfully: ${path} \n`);
         })
