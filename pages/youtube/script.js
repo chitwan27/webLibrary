@@ -13,12 +13,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 function supplyLinks(list,number,container) {
-    const regex = /(?:https?:\/\/)?(?:www\.)?youtube\.com\/(?:watch\?v=|shorts\/)([a-zA-Z0-9_-]+)/;
     if (number>0) {
         for(let i = ((number-1)*10); i < (number*10) && i < list.length; i++) {
             let link = list[i][0];
-
-            link = link.replace(regex,"https://www.youtube.com/embed/$1");
+            link = extractVid( link );
+            link = "https://www.youtube.com/embed/" + link;
             const linkElement = document.createElement('iframe');
             linkElement.setAttribute("allowfullscreen","");
             container.appendChild(linkElement);
@@ -40,4 +39,10 @@ async function fetchData() {
     catch (error) {
         console.error('Error Fetching:', error);
     }
+}
+
+function extractVid(str) {
+    num = str.indexOf("watch?v=");
+    if (num==-1) num = str.indexOf("/shorts/");
+    return str.substr(num+8,11);
 }

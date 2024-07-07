@@ -111,7 +111,7 @@ function updateJson(newObj,filePath) {
         }
         fs.writeFile(path.join(__dirname, filePath),JSON.stringify(oldObj))
         .then(() => {
-            console.log(`Written Successfully: ${path} \n`);
+            console.log(`Written Successfully: ${filePath} \n`);
         })
         .catch(err => {
             console.log(`Error Writing: ${err}`);
