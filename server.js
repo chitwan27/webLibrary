@@ -28,6 +28,7 @@ app.get('/trigger-sync', (req, res) => {
         const consumerKey = myData["Consumer Key"];
         const accessToken = myData["access_token"];
         getPocket(consumerKey,accessToken);
+        res.send();
     })
     .catch((err) => {
         console.log(`Error Occured: ${err}`)
@@ -53,7 +54,6 @@ function getPocket(consumerKey,accessToken){
         consumer_key: consumerKey,
         access_token: accessToken,
         detailType: 'complete',
-        sort: 'title',
         state: 'all'
     };
     fetch("https://getpocket.com/v3/get", {
@@ -74,20 +74,22 @@ function getPocket(consumerKey,accessToken){
         const miscObj = {};
         const itemsId = [];
         for (const key in data.list) {
-            itemsId.push(key);
             const item = data.list[key];
-            if (item.status==1) {
-                miscObj[item.resolved_url] = item.resolved_title;
+            if (item.status<2) {
+                itemsId.push(key);
+                if (item.status==1) {
+                    miscObj[item.resolved_url] = item.resolved_title;
+                }
+                else if (/watch\?v/i.test(item.given_url) || /youtube\.com\/shorts/i.test(item.given_url)) {
+                    youtubeObj[item.resolved_url] = item.resolved_title;
+                }
+                else if (/reddit\.com\/r\/[^/]+\/comments/i.test(item.given_url)) {
+                    redditObj[item.given_url] = item.resolved_title;
+                }
+                else {
+                    pocketObj[item.resolved_url] = item.resolved_title; 
+                }
             }
-            else if (/watch\?v/i.test(item.given_url) || /youtube\.com\/shorts/i.test(item.given_url)) {
-                youtubeObj[item.resolved_url] = item.resolved_title;
-            }
-            else if (/reddit\.com\/r\/[^/]+\/comments/i.test(item.given_url)) {
-                redditObj[item.given_url] = item.resolved_title;
-            }
-            else {
-                pocketObj[item.resolved_url] = item.resolved_title; 
-            };
         }
         if(itemsId.length > 0) {
             clearPocket(itemsId,consumerKey,accessToken);
