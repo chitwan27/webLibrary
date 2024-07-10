@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const obj = await fetchData(); 
     const arr = Object.entries(obj);
-    nInput.placeholder = "1 - " + Math.floor((arr.length)/10 + 1);
+    nInput.placeholder = "Till - " + Math.ceil((arr.length)/10);
     nInput.addEventListener("change", () => {
         frame.innerHTML = "";
         const num = nInput.value;
