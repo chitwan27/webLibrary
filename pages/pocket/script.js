@@ -30,7 +30,7 @@ function supplyLinks(list,number,container) {
             linkElement.style.borderColor = "#0f99f0";
             linkElement.style.borderRadius = "10px";
             linkElement.style.minHeight = "125px";
-            linkElement.style.maxWidth = "250px";
+            linkElement.style.width = "250px";
 
             linkElement.appendChild(lnk);
             container.appendChild(linkElement);

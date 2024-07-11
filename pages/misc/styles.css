@@ -19,6 +19,7 @@ div{
     align-content: center;
     align-items: center;
     flex-wrap: wrap;
+    flex-shrink: 0;
     display: flex;
 
     padding: 20px;
@@ -30,7 +31,7 @@ div{
 
 .entry{
     margin: 0px;
-    width: 100px;
+    width: 125px;
     height: 25px;
     padding: 15px;
     border-radius: 15px;

@@ -1,6 +1,6 @@
 body{
     text-align: center;
-    background-color: #FFF3E0; 
+    background-color: #edebf6; 
     color: #333; 
 }
 
@@ -9,7 +9,7 @@ h1,h2{
     padding: 20px;
     color: #3e0000; 
     border-radius: 5px;
-    background-color: #bfbfee; 
+    background-color: #eebfe3; 
     border: 3px solid #0F88F0; 
 }
 
@@ -19,18 +19,19 @@ div{
     align-content: center;
     align-items: center;
     flex-wrap: wrap;
+    flex-shrink: 0;
     display: flex;
 
     padding: 20px;
     border: 1px solid #F48FB1; 
     border-radius: 15px;
-    background-color: #E0F7FA; 
+    background-color: #fae0eb; 
     margin: 20px;
 }
 
 .entry{
     margin: 0px;
-    width: 100px;
+    width: 125px;
     height: 25px;
     padding: 15px;
     border-radius: 15px;

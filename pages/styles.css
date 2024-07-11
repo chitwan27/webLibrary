@@ -1,6 +1,6 @@
 body{
     text-align: center;
-    background-color: #d1f6fb; 
+    background-color: #eafbd1; 
     color: #333; 
 }
 
@@ -10,7 +10,7 @@ h1,h2{
     color: #3e0000; 
     border-radius: 5px;
     background-color: #f0f0c7; 
-    border: 2px solid #0F88FB; 
+    border: 5px solid #80f42e; 
 }
 
 div{
@@ -22,9 +22,9 @@ div{
     display: flex;
 
     padding: 10px;
-    border: 1px solid #F48FB1; 
+    border: 1px solid #d9c4df; 
     border-radius: 15px;
-    background-color: #FFF3E0; 
+    background-color: #fff6e0; 
     margin: 20px;
 }
 
@@ -41,19 +41,19 @@ div{
 }
 
 a{
-    background-color: #ff2020be; 
-    border: 2px solid #0f000f; 
+    background-color: #20ffd2be; 
+    border: 2px solid #330033; 
     border-radius: 25px;
     font-size: 2.5rem;
     min-height: 75px;
     min-width: 300px;
-    color: #f6f6eb;
+    color: #313100;
     padding: 15px;
     margin: 15px;
 }
 
 a:hover{
-    color:#ABCDEF;
+    color:#337a85;
     font-style: italic;
     text-decoration: none;
 }

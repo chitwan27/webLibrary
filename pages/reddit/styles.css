@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-color: #f7f7f7; 
+    background-color: #fae9dc; 
 }
 
 h1,h2 {
@@ -17,18 +17,18 @@ div {
     flex-direction: column;    
     align-content: center;
     display: flex;
-
-    padding: 10px;
-    border-radius: 15px;
-    border: 1px solid #F48FB1; 
-    background-color: #ffdfcc; 
-    margin: 20px;
+    
     gap: 10px;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 15px;
+    border: 1px solid #F48FB1;
+    background-color: #ffdfcc;
 }
 
 .entry {
     margin: 0px;
-    width: 100px;
+    width: 125px;
     height: 25px;
     padding: 15px;
     border-radius: 15px;

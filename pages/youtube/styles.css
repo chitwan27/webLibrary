@@ -6,9 +6,9 @@ body {
 h1,h2 {
     margin: 20px;
     padding: 20px;
-    color: #133e00; 
+    color: #d3e8e9; 
     border-radius: 5px;
-    background-color: #f6acac; 
+    background-color: #ed0330de; 
     border: 3px solid #0F88FB; 
 }
 
@@ -21,15 +21,15 @@ div {
     display: flex;
 
     padding: 10px;
+    border: 1px solid #f48fb1; 
     border-radius: 15px;
-    border: 1px solid #F48FB1; 
     background-color: #FFF3E0; 
     margin: 20px;
 }
 
 .entry {
     margin: 0px;
-    width: 100px;
+    width: 125px;
     height: 25px;
     padding: 15px;
     border-radius: 15px;
@@ -40,7 +40,9 @@ div {
 iframe {
     background-color: #8C9EFF; 
     border: 1px solid #80DEEA; 
+    box-sizing: border-box;
     border-radius: 10px;
+    max-width: 100%;
     padding: 5px;
     margin: 15px;
 }
