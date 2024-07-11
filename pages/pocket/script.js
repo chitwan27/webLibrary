@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const obj = await fetchData(); 
     const arr = Object.entries(obj);
-    nInput.placeholder = "Till - " + Math.ceil((arr.length)/10);
+    nInput.placeholder = "Last: " + Math.ceil((arr.length)/16);
     nInput.addEventListener("change", () => {
         frame.innerHTML = "";
         const num = nInput.value;
@@ -14,23 +14,23 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function supplyLinks(list,number,container) {
     if (number>0) {
-        for(let i = ((number-1)*10); i < (number*10) && i < list.length; i++) {
+        for(let i = ((number-1)*16); i < (number*16) && i < list.length; i++) {
             const title = list[i][1];
             const link = list[i][0];
 
             const lnk = document.createElement('a');
             lnk.setAttribute("target","_blank");
-            lnk.textContent = " 🔗 ";
+            lnk.textContent = "🔗";
             lnk.textContent += title;
             lnk.href = link;
 
             if(lnk.textContent.length < 5) lnk.textContent += link;
             const linkElement = document.createElement('div');
             linkElement.style.backgroundColor = "#FFF7F7";
-            linkElement.style.borderColor = "#0F88FB";
+            linkElement.style.borderColor = "#0f99f0";
             linkElement.style.borderRadius = "10px";
-            linkElement.style.height = "250px";
-            linkElement.style.width = "500px";
+            linkElement.style.minHeight = "125px";
+            linkElement.style.maxWidth = "250px";
 
             linkElement.appendChild(lnk);
             container.appendChild(linkElement);

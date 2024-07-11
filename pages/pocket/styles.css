@@ -41,7 +41,10 @@ div{
 a{
     background-color: #fcf8fc;
     text-decoration: none;
-    border-radius: 5px;
+    word-wrap: break-word;
+    border-radius: 20px;
+    max-height: 100%;
+    max-width: 100%;
     font-size: 2rem;
 }
 

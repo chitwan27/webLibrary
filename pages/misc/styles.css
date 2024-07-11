@@ -7,10 +7,10 @@ body{
 h1,h2{
     margin: 20px;
     padding: 20px;
-    color: #3e0000; 
+    color: #fafafa; 
     border-radius: 5px;
-    background-color: #c7eebf; 
-    border: 3px solid #0F88F0; 
+    background-color: #ef3d69; 
+    border: 3px solid #0a55a0; 
 }
 
 div{
@@ -41,7 +41,10 @@ div{
 a{
     background-color: #fcf8fc;
     text-decoration: none;
-    border-radius: 5px;
+    word-wrap: break-word;
+    border-radius: 20px;
+    max-height: 100%;
+    max-width: 100%;
     font-size: 2rem;
 }
 
