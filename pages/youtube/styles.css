@@ -1,15 +1,15 @@
 body {
     text-align: center;
-    background-color: #d6f0f0; 
+    background-color:  #FFFFFF; 
 }
 
 h1,h2 {
     margin: 20px;
     padding: 20px;
-    color: #d3e8e9; 
+    color: #FFFFFF; 
     border-radius: 5px;
-    background-color: #ed0330de; 
-    border: 3px solid #0F88FB; 
+    background-color: #FF0000; 
+    border: 3px solid #0F0000; 
 }
 
 div {
@@ -21,9 +21,9 @@ div {
     display: flex;
 
     padding: 10px;
-    border: 1px solid #f48fb1; 
+    border: 1px solid #0F0F0F; 
     border-radius: 15px;
-    background-color: #FFF3E0; 
+    background-color: #EDEDED; 
     margin: 20px;
 }
 
@@ -38,8 +38,8 @@ div {
 }
 
 iframe {
-    background-color: #8C9EFF; 
-    border: 1px solid #80DEEA; 
+    background-color: #808080; 
+    border: 1px solid #AFAFAF; 
     box-sizing: border-box;
     border-radius: 10px;
     max-width: 100%;
