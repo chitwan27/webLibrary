@@ -1,3 +1,4 @@
+const favicon = require('serve-favicon');
 const express = require('express');
 const fs = require('fs').promises;
 const path = require('path');
@@ -15,6 +16,7 @@ makeApi('/api/pocket', pocketPath);
 makeApi('/api/reddit', redditPath);
 makeApi('/api/misc', miscPath);
 
+app.use(favicon(path.join(__dirname, 'pages/assets', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'pages')));
 
 app.listen(port, () => {
