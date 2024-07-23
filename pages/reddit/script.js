@@ -2,19 +2,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     const nInput = document.getElementById("nInput");
     const frame = document.querySelector("div");
 
-    const obj = await fetchData(); 
+    const obj = await fetchData();
     const arr = Object.entries(obj);
-    nInput.placeholder = "Last: " + Math.ceil((arr.length)/4);
+    nInput.placeholder = "Last: " + Math.ceil((arr.length) / 4);
     nInput.addEventListener("change", () => {
         frame.innerHTML = "";
         const num = nInput.value;
-        supplyLinks(arr,num,frame);
+        supplyLinks(arr, num, frame);
     });
 });
 
-function supplyLinks(list,number,container) {
-    if (number>0) {
-        for(let i = ((number-1)*4); i < (number*4) && i < list.length; i++) {
+function supplyLinks(list, number, container) {
+    if (number > 0) {
+        for (let i = ((number - 1) * 4); i < (number * 4) && i < list.length; i++) {
             let link = list[i][0];
             let text = list[i][1];
 
@@ -55,8 +55,8 @@ async function fetchData() {
         if (!response.ok) {
             throw new Error('Network Response: ' + response.statusText);
         }
-        return response.json();        
-    } 
+        return response.json();
+    }
     catch (error) {
         console.error('Error Fetching:', error);
     }
