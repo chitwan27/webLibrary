@@ -1,5 +1,6 @@
 # Web Library
 ### Minimal node web app that I made to be able to store all my web saves locally. 
+![alt text](project_assets/image.png)
 
 ## Basic working of this Prototype:
 - ### Firstly, I add the webpages I want to save from any website, to my Pocket saves, from any device like my phone or laptop.
@@ -9,9 +10,15 @@
 
 ## How to use?
 - ### Just fork and clone the whole project onto your local system.
-- ### Go to the base directory of the project and run "node run start".
+- ### Go to the base directory of the project to run it with node JS.
 - ### Firstly, to connect with pocket ask for the "Product Key" from me.
 - ### After authenticating successfully the Web Library is fully functional.
+
+---
+
+![alt text](project_assets/image-1.png)
+
+---
 
 ## Contributing
 - Open an issue for bugs or feature requests on the [GitHub repository](https://github.com/chitwan27/webLibrary/issues).
