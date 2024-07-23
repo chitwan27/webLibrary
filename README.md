@@ -10,9 +10,9 @@
 
 ## How to use?
 - ### Just fork and clone the whole project onto your local system.
-- ### Go to the base directory of the project to run it with node JS.
-- ### Firstly, to connect with pocket ask for the "Product Key" from me.
-- ### After authenticating successfully the Web Library is fully functional.
+- ### Go to the base directory of the project to run it with Node JS.
+- ### To connect with pocket one needs a "platform consumer key." ([See Here!](https://getpocket.com/developer/docs/authentication))
+- ### After authenticating with it successfully the Web Library is fully functional.
 
 ---
 
