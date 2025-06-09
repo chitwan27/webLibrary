@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const obj = await fetchData();
     const arr = Object.entries(obj);
-    nInput.placeholder = "Last: " + Math.ceil((arr.length) / 8);
+    nInput.placeholder = "Last: " + Math.ceil((arr.length) / 25);
     nInput.addEventListener("change", () => {
         frame.innerHTML = "";
         const num = nInput.value;
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function supplyLinks(list, number, container) {
     if (number > 0) {
-        for (let i = ((number - 1) * 8); i < (number * 8) && i < list.length; i++) {
+        for (let i = ((number - 1) * 25); i < (number * 25) && i < list.length; i++) {
             let link = list[i][0];
             link = extractVid(link);
             link = "https://www.youtube.com/embed/" + link;

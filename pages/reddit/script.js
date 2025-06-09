@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const obj = await fetchData();
     const arr = Object.entries(obj);
-    nInput.placeholder = "Last: " + Math.ceil((arr.length) / 4);
+    nInput.placeholder = "Last: " + Math.ceil((arr.length) /10);
     nInput.addEventListener("change", () => {
         frame.innerHTML = "";
         const num = nInput.value;
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function supplyLinks(list, number, container) {
     if (number > 0) {
-        for (let i = ((number - 1) * 4); i < (number * 4) && i < list.length; i++) {
+        for (let i = ((number - 1) *10); i < (number *10) && i < list.length; i++) {
             let link = list[i][0];
             let text = list[i][1];
 
