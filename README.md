@@ -9,21 +9,14 @@
 - ### Currently, I am just displaying them, but hypothetically I could make them searchable, and analyse them and so on.
 
 ## How to use?
-- ### Just fork and clone the whole project onto your local system.
-- ### Go to the base directory of the project, to run it with Node JS.
-- ### To connect with pocket one needs a "platform consumer key." ([See Here!](https://getpocket.com/developer/docs/authentication))
-- ### After authenticating with it successfully, the Web Library is fully functional.
+
+Unfortunately as pocket has been shut down, this app is useless now. I have shifted to raindrop for managing my bookmarks. It already has some great inbuilt features that make this kind of app redundant. So it goes!
 
 ---
 
 ![alt text](project_assets/image-1.png)
 
 ---
-
-## Contributing
-- Open an issue for bugs or feature requests on the [GitHub repository](https://github.com/chitwan27/webLibrary/issues).
-- Fork the repository, make your changes, and submit a pull request.
-- I welcome everyone to give any valuable feedback on this project.
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/chitwan27/webLibrary/blob/main/LICENSE) file for details.
