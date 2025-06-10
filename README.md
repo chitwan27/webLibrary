@@ -3,10 +3,10 @@
 ![alt text](project_assets/image.png)
 
 ## Basic working of this Prototype:
-- ### Firstly, I add the webpages I want to save from any website, to my Pocket saves, from any device like my phone or laptop.
-- ### Then, whenever I run this app, it fetches all those saves from Pocket and stores them locally, removing them from Pocket.
-- ### After this, I can do whatever I want with the saves which I have stored in a JSON file in a simple { "link": "title" } format.
-- ### Currently, I am just displaying them, but hypothetically I could make them searchable, and analyse them and so on.
+- Firstly, I add the webpages I want to save from any website, to my Pocket saves, from any device like my phone or laptop.
+- Then, whenever I run this app, it fetches all those saves from Pocket and stores them locally, removing them from Pocket.
+- After this, I can do whatever I want with the saves which I have stored in a JSON file in a simple { "link": "title" } format.
+- Currently, I am just displaying them, but hypothetically I could make them searchable, and analyse them and so on.
 
 ## How to use?
 
